@@ -1,0 +1,1 @@
+/nfs/nhome/live/ilyesk/.dotfiles/vim/vimrc.symlink
