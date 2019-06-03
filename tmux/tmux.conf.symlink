@@ -41,7 +41,7 @@ bind Escape copy-mode
 
 # p = paste
 unbind p
-bind p paste-buffer 
+bind p paste-buffer
 
 
 source ~/.dotfiles/tmux/base16.sh
