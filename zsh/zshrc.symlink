@@ -64,12 +64,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 
 
-if [ "$(uname -s)" == "Darwin" ]
-then
-    plugins=(git colorize macos python pip brew terminalapp themes colored-man-pages cp screen tmux vundle vi-mode torrent web-search svn history-substring-search autojump)
-else
-    plugins=(git colorize python pip terminalapp themes colored-man-pages cp screen tmux vundle vi-mode torrent web-search svn history-substring-search autojump)
-fi
+plugins=(git colorize python pip terminalapp themes colored-man-pages cp screen tmux vundle vi-mode torrent web-search svn history-substring-search autojump)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
