@@ -11,15 +11,21 @@ bind r source-file ~/.tmux.conf
 
 # use 256 colors
 # set -g default-terminal 'tmux-256color-italic'
-set-option -ga terminal-overrides ",xterm-256color-italic:Tc"
+#set-option -ga terminal-overrides ",xterm-256color-italic:Tc"
+#set -g default-terminal "tmux-256color-italic"
+
 set -g default-terminal "tmux-256color-italic"
+set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
+
+# make window/pane index start with 1
+set -g base-index 1
+setw -g pane-base-index 1
+
+# make delay shorter
+set -sg escape-time 0
 
 # mouse
-set -g mouse on
-
-# change tmux bar colors
-set -g status-bg '#666666'
-set -g status-fg '#aaaaaa'
+# set -g mouse on
 
 # Keep plenty of history for scrollback
 set -g history-limit 50000
@@ -35,4 +41,7 @@ bind Escape copy-mode
 
 # p = paste
 unbind p
-bind p paste-buffer
+bind p paste-buffer 
+
+
+source ~/.dotfiles/tmux/base16.sh
