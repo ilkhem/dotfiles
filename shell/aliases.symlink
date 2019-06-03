@@ -1,55 +1,20 @@
-alias s="osascript ~/.dotfiles/SpotifyControl/SpotifyControl"
-alias sn="osascript ~/.dotfiles/SpotifyControl/SpotifyControl next"
-alias sp="osascript ~/.dotfiles/SpotifyControl/SpotifyControl prev"
-# Now playing: Cher - Believe
-alias sb="osascript ~/.dotfiles/SpotifyControl/SpotifyControl start spotify:track:2goLsvvODILDzeeiT4dAoR"
+alias ca='conda activate'
+alias cda='conda deactivate'
 
-# Safe delete
+alias jn='jupyter notebook'
+alias jl='jupyter lab'
+
+alias awaydate='cd /nfs/home1/common/tealist/ && ./awaydate && cd'
+
+alias vimrc="vim ~/.vimrc"
+alias zshrc="vim ~/.zshrc"
+
 alias rm="trash"
 
-# Unix
-alias tlf="tail -f"
-alias ln='ln -v'
-alias mkdir='mkdir -p'
-alias ...='../..'
-alias -g G='| grep'
-alias -g M='| less'
-alias -g ONE="| awk '{ print \$1}'"
-alias e="$EDITOR"
-alias v="$VISUAL"
-# because typing is hard
-alias bim="nvim"
-alias vim="nvim"
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
-# fix for passing params to rake tasks
-alias rake='noglob rake'
-
-alias :w="echo this isn\'t vim 🌟"
-alias :q='exit'
-
-# git
-alias g='git'
-alias gs='git status -sb'
-# copy the current branch name
-alias gcb='git rev-parse --abbrev-ref HEAD | pbcopy'
-# because i make this typo a lot
-alias ggs='gs'
-
-# Bundler
-alias b="bundle"
-alias bi="bundle install"
-alias be="bundle exec"
-# because i make this typo a lot
-alias kbundle="bundle"
-
-# Rubygems
-alias gi="gem install"
-
-# Rails
-alias rk="rake"
-alias rc="NO_RENDERER=true bin/rails c"
-
-# Config Files
-alias vimrc="vim ~/.vimrc"
-alias vimplugins="vim ~/.dotfiles/vim/vim.symlink/plugin/plugins.vim"
-alias zshrc="vim ~/.zshrc"
+alias ls='ls -GFh'
+alias ll='ls -lh'
+alias l='ls -lah'

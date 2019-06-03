@@ -1,0 +1,10 @@
+source ~/.aliases
+
+function zotero () {
+	nohup /Downloads/Zotero_linux-x86_64/zotero >/dev/null 2>&1 & disown
+}
+
+export PATH=$PATH:$HOME/bin
+
+. /nfs/nhome/live/ilyesk/anaconda3/etc/profile.d/conda.sh
+# conda activate
