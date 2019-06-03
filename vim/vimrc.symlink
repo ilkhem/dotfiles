@@ -11,8 +11,8 @@ nnoremap <C-H> <C-W><C-H>
 " CtrlP use FZF (faster!)
 nnoremap <C-p> :Files<Cr>
 
-set background=dark
-colorscheme solarized8
+" set background=dark
+" colorscheme solarized8
 
 " Showcase comments in italics
 highlight Comment cterm=italic gui=italic
@@ -25,6 +25,7 @@ set undolevels=1000
 set undoreload=10000
 
 set number
+set mouse=a
 set ts=4
 set autoindent
 set expandtab
