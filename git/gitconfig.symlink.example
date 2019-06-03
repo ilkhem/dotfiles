@@ -1,34 +1,32 @@
 [user]
-  name = AUTHOR_NAME
-  email = AUTHOR_EMAIL
-  signingkey = GPG_SIGNING_KEY
+    name = AUTHOR_NAME
+    email = AUTHOR_EMAIL
+    signingkey = GPG_SIGNING_KEY
 [github]
-  user = AUTHOR_HANDLE
+    user = AUTHOR_HANDLE
 [credential]
-  helper = GIT_CREDENTIAL_HELPER
+    helper = GIT_CREDENTIAL_HELPER
 [alias]
-  br = branch
-  p = add -p
-  co = checkout
-  ci = commit
-  coi = !git for-each-ref --sort=-committerdate --format='%(refname:short) (%(committerdate:relative))' refs/heads | fzf --reverse --nth=1 --preview 'git log --patch --color {1}...{1}~5' | awk '{print $1}' | xargs git checkout
-  st = status
-  staged = diff --staged
+    st = status
+    unstage = reset HEAD --
+    staged = diff --staged
+    graph = log --oneline --decorate --graph --all
+    last = log -1 HEAD
+    aliases = config ==get=regexp \"^alias\\.\"
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    ui = auto
 [core]
-  excludesfile = ~/.gitignore
-  editor = nvim
+    editor = vim
 [difftool]
-  prompt = false
+    prompt = false
 [mergetool]
-  prompt = false
+    prompt = false
 [push]
-  default = upstream
+    default = upstream
 [commit]
-  gpgsign = true
-[hub]
-  protocol = https
+    gpgsign = true
+[gpg]
+    program = gpg2
