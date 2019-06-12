@@ -102,3 +102,5 @@ export PATH=$PATH:$HOME/bin
 
 . ~/anaconda3/etc/profile.d/conda.sh
 
+# fix gpg fatal error
+export GPG_TTY=$(tty)

@@ -9,8 +9,6 @@ alias awaydate='cd /nfs/home1/common/tealist/ && ./awaydate && cd'
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 
-alias rm="trash"
-
 alias ls='ls -GFh'
 alias ll='ls -lh'
 alias l='ls -lah'
