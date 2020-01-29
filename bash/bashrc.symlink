@@ -10,7 +10,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 export PATH=$PATH:$HOME/bin
 
-. /nfs/nhome/live/ilyesk/anaconda3/etc/profile.d/conda.sh
+. ~/anaconda3/etc/profile.d/conda.sh
 # conda activate
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
