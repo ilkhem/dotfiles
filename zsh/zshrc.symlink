@@ -64,7 +64,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 
 
-plugins=(git colorize python pip terminalapp themes colored-man-pages cp screen tmux vundle vi-mode torrent web-search svn history-substring-search autojump)
+plugins=(git colorize python pip terminalapp themes colored-man-pages cp screen tmux vundle vi-mode torrent web-search svn history-substring-search zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
