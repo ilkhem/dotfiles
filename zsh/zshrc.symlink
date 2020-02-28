@@ -64,7 +64,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 
 
-plugins=(git colorize python pip terminalapp themes colored-man-pages cp screen tmux vundle vi-mode torrent web-search svn history-substring-search zsh-autosuggestions)
+plugins=(git colorize python pip terminalapp themes colored-man-pages cp screen tmux vundle vi-mode torrent web-search history-substring-search zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
@@ -74,7 +74,7 @@ source ~/.aliases
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
