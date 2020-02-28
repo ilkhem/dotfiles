@@ -111,3 +111,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+# add path to app installed locally on gatsby desktop
+export PATH="$HOME/Apps:$PATH"
