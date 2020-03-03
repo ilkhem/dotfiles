@@ -5,3 +5,6 @@ git/gitconfig.symlink
 vim/vim.symlink/plugged
 vim/vim.symlink/undo
 vim/vim.symlink/.netrwhist
+vim/nvim.symlink/plugged
+vim/nvim.symlink/undo
+vim/nvim.symlink/.netrwhist
