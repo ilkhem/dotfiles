@@ -1,4 +1,6 @@
-set -e
+#!/usr/bin/env bash
+
+# set -e
 info () {
   printf "\r  [ \033[00;34m..\033[0m ] $1\n"
 }
