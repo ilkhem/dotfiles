@@ -64,7 +64,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 
 
-plugins=(git colorize python pip terminalapp themes colored-man-pages cp screen tmux vundle vi-mode torrent web-search history-substring-search zsh-autosuggestions)
+plugins=(git colorize python pip terminalapp themes colored-man-pages cp screen tmux vi-mode torrent web-search history-substring-search zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
@@ -78,9 +78,9 @@ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -113,3 +113,6 @@ export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 # add path to app installed locally on gatsby desktop
 export PATH="$HOME/Apps:$PATH"
+
+# resource .aliases
+source ~/.aliases
