@@ -47,6 +47,12 @@ Plug 'junegunn/goyo.vim'
 " Git support
 Plug 'tpope/vim-fugitive', { 'commit': '444ba9fda5d05aa14c7e8664fa4a66a59c62a550' }
 
+" Tags support
+Plug 'ludovicchabant/vim-gutentags'
+
+" Better parenmtach
+Plug 'andymass/vim-matchup'
+
 " Themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'icymind/NeoSolarized'
