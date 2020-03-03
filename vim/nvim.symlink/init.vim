@@ -1,5 +1,8 @@
 source ~/.config/nvim/plugin/plugins.vim
 
+let mapleader =","
+let maplocalleader =","
+
 " Some basics:
 set nocompatible
 set encoding=utf-8
@@ -61,8 +64,30 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
+" Nerd tree
+map <leader>n :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " Automatically deletes all trailing whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
 
+" configure neovim to use pyenv
+let g:python3_host_prog = expand('$HOME/.pyenv/versions/3.7.0/envs/neovim3/bin/python')
+let g:python_host_prog = expand('$HOME/.pyenv/versions/2.7.14/envs/neovim2/bin/python')
+
+""" VIMTEX
+" configure deoplete with vimtex
+call deoplete#custom#var('omni', 'input_patterns', {
+        \ 'tex': g:vimtex#re#deoplete
+        \})
+
+let g:vimtex_complete_close_braces = 1
+
+" setup okular
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_general_options_latexmk = '--unique'
+
 " nvr to work with latex callbacks for nvim
 let g:vimtex_compiler_progname = 'nvr'
+
