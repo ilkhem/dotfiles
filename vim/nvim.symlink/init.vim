@@ -48,6 +48,8 @@ set splitright                        " Open new splits to the right
 set splitbelow                        " Open new splits to the bottom
 set history=500
 set hlsearch                          " Highlight search results
+" Press Space to turn off highlighting and clear any message already displayed.
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 set ignorecase smartcase              " Search queries intelligently set case
 set incsearch                         " Show search results as you type
 set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
@@ -64,10 +66,6 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" Nerd tree
-map <leader>n :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 " Automatically deletes all trailing whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
 
@@ -75,12 +73,31 @@ autocmd BufWritePre * %s/\s\+$//e
 let g:python3_host_prog = expand('$HOME/.pyenv/versions/3.7.0/envs/neovim3/bin/python')
 let g:python_host_prog = expand('$HOME/.pyenv/versions/2.7.14/envs/neovim2/bin/python')
 
-""" VIMTEX
+
+
+" NERD TREE
+map <leader>n :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+
+" DEOPLETE
 " configure deoplete with vimtex
 call deoplete#custom#var('omni', 'input_patterns', {
         \ 'tex': g:vimtex#re#deoplete
         \})
+" call deoplete manually
+"call deoplete#custom#option({
+"      \ 'auto_complete_popup': 'manual',
+"      \ })
+" use tab to forward cycle
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" use tab to backward cycle
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
+
+
+""" VIMTEX
 let g:vimtex_complete_close_braces = 1
 
 let g:matchup_override_vimtex = 1

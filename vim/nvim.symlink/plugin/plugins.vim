@@ -3,7 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Addons
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 
 " async running stuff
 Plug 'neomake/neomake'
