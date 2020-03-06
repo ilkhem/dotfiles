@@ -83,6 +83,8 @@ call deoplete#custom#var('omni', 'input_patterns', {
 
 let g:vimtex_complete_close_braces = 1
 
+let g:matchup_override_vimtex = 1
+
 " setup okular
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
