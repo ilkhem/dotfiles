@@ -23,6 +23,11 @@ Plug 'davidhalter/jedi-vim'
 " latex
 Plug 'lervag/vimtex'
 
+" Snippets engine.
+Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
 " Tmux integration
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'

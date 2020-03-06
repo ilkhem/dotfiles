@@ -75,17 +75,13 @@ let g:python_host_prog = expand('$HOME/.pyenv/versions/2.7.14/envs/neovim2/bin/p
 
 
 
-" NERD TREE
+""" NERD TREE
 map <leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
 
-" DEOPLETE
-" configure deoplete with vimtex
-call deoplete#custom#var('omni', 'input_patterns', {
-        \ 'tex': g:vimtex#re#deoplete
-        \})
+""" DEOPLETE
 " call deoplete manually
 "call deoplete#custom#option({
 "      \ 'auto_complete_popup': 'manual',
@@ -98,15 +94,91 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 
 """ VIMTEX
+" configure deoplete with vimtex
+call deoplete#custom#var('omni', 'input_patterns', {
+        \ 'tex': g:vimtex#re#deoplete
+        \})
 let g:vimtex_complete_close_braces = 1
 
 let g:matchup_override_vimtex = 1
 
-" setup okular
-let g:vimtex_view_general_viewer = 'okular'
-let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
-let g:vimtex_view_general_options_latexmk = '--unique'
-
 " nvr to work with latex callbacks for nvim
 let g:vimtex_compiler_progname = 'nvr'
 
+" configure viewer depending on OS (only for linux and macOS)
+let s:uname = system("echo -n \"$(uname)\"")
+if !v:shell_error && s:uname == "Linux"
+        " setup okular
+        let g:vimtex_view_general_viewer = 'okular'
+        let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+        let g:vimtex_view_general_options_latexmk = '--unique'
+else
+        " assume it is macOS
+        " source is https://github.com/jdhao/nvim-config/blob/master/plugins.vim
+        " let g:vimtex_view_method = "skim"
+        let g:vimtex_view_general_viewer
+                \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+        let g:vimtex_view_general_options = '-r @line @pdf @tex'
+
+        " This adds a callback hook that updates Skim after compilation
+        let g:vimtex_compiler_callback_hooks = ['UpdateSkim']
+
+        function! UpdateSkim(status)
+            if !a:status | return | endif
+
+            let l:out = b:vimtex.out()
+            let l:tex = expand('%:p')
+            let l:cmd = [g:vimtex_view_general_viewer, '-r']
+
+            if !empty(system('pgrep Skim'))
+                call extend(l:cmd, ['-g'])
+            endif
+
+            if has('nvim')
+                call jobstart(l:cmd + [line('.'), l:out, l:tex])
+            elseif has('job')
+                call job_start(l:cmd + [line('.'), l:out, l:tex])
+            else
+                call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
+            endif
+        endfunction
+endif
+
+" TOC settings
+let g:vimtex_toc_config = {
+      \ 'name' : 'TOC',
+      \ 'layers' : ['content', 'todo', 'include'],
+      \ 'resize' : 1,
+      \ 'split_width' : 50,
+      \ 'todo_sorted' : 0,
+      \ 'show_help' : 1,
+      \ 'show_numbers' : 1,
+      \ 'mode' : 2,
+      \}
+
+" add ysc and yse from surround.vim
+augroup latexSurround
+     autocmd!
+     autocmd FileType tex call s:latexSurround()
+augroup END
+
+function! s:latexSurround()
+     let b:surround_{char2nr("e")}
+       \ = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
+     let b:surround_{char2nr("c")} = "\\\1command: \1{\r}"
+endfunction
+
+
+
+""" ULTISNIPPETS
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" Configuration for custom snippets directory, see
+" https://jdhao.github.io/2019/04/17/neovim_snippet_s1/ for details.
+let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
