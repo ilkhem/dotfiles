@@ -80,6 +80,10 @@ map <leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
+"""JEDI-VIM
+"<leader>n from nerd tree overwritten by jedi-vim
+let g:jedi#usages_command = "<leader>f"
+
 
 """ DEOPLETE
 " call deoplete manually
