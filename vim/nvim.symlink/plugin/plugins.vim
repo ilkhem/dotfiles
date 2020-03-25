@@ -7,6 +7,7 @@ Plug 'tpope/vim-surround'
 
 " async running stuff
 Plug 'neomake/neomake'
+Plug 'tpope/vim-dispatch'
 
 " (python) autocomplete and syntax check (async)
 if has('nvim')

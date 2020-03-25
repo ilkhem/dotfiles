@@ -84,6 +84,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "<leader>n from nerd tree overwritten by jedi-vim
 let g:jedi#usages_command = "<leader>f"
 
+""" VIM-DISPATCH
+autocmd FileType python let b:dispatch = 'python %'
 
 """ DEOPLETE
 " call deoplete manually
