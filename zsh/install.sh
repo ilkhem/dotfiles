@@ -8,3 +8,5 @@ if [ -d "$ZSH_CUSTOM" ]; then
                 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
         fi
 fi
+
+[[ -f "zsh/ilyes.zsh-theme"]] && cp "zsh/ilyes.zsh-theme" "$ZSH/themes/"
