@@ -22,3 +22,7 @@ alias gpg="gpg2"
 alias st="$HOME/Apps/sublime_text_3/sublime_text"
 
 alias t="todo.sh"
+
+alias u238c="ssh ilyesk@ssh.swc.ucl.ac.uk -t ssh u238c"
+alias gpu350="ssh ilyesk@ssh.swc.ucl.ac.uk -t ssh gpu-350-05"
+

@@ -86,6 +86,7 @@ let g:jedi#usages_command = "<leader>f"
 
 """ VIM-DISPATCH
 autocmd FileType python let b:dispatch = 'python %'
+map <leader>m :Dispatch<CR>
 
 """ DEOPLETE
 " call deoplete manually
