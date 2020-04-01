@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Addons
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 " Plug 'ervandew/supertab'
 
 " async running stuff
@@ -20,6 +21,9 @@ endif
 let g:deoplete#enable_at_startup = 1
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
+
+" autoformat code
+Plug 'Chiel92/vim-autoformat'
 
 " latex
 Plug 'lervag/vimtex'
@@ -40,9 +44,6 @@ Plug 'elzr/vim-json'
 " File system navigation
 Plug 'tpope/vim-eunuch'
 
-" vim wiki
-Plug 'vimwiki/vimwiki'
-
 " Syntax errors
 " Plug 'vim-syntastic/syntastic'  " not async
 Plug 'ntpeters/vim-better-whitespace'
@@ -51,7 +52,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/goyo.vim'
 
 " Git support
-Plug 'tpope/vim-fugitive', { 'commit': '444ba9fda5d05aa14c7e8664fa4a66a59c62a550' }
+Plug 'tpope/vim-fugitive'
 
 " Tags support
 Plug 'ludovicchabant/vim-gutentags'
