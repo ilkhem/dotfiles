@@ -39,6 +39,11 @@ set -g renumber-windows on
 unbind [
 bind Escape copy-mode
 
+# new panes and windows in current pane's path
+bind-key c new-window -c "#{pane_current_path}"
+bind-key % split-window -h -c "#{pane_current_path}"
+bind-key '"' split-window -v -c "#{pane_current_path}"
+
 # p = paste
 unbind p
 bind p paste-buffer
