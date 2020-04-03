@@ -10,6 +10,9 @@ Plug 'tpope/vim-commentary'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-dispatch'
 
+" lightline
+Plug 'itchyny/lightline.vim'
+
 " (python) autocomplete and syntax check (async)
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -64,5 +67,6 @@ Plug 'andymass/vim-matchup'
 Plug 'altercation/vim-colors-solarized'
 Plug 'icymind/NeoSolarized'
 Plug 'lifepillar/vim-solarized8'
+Plug 'itchyny/landscape.vim'
 
 call plug#end()

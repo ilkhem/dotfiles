@@ -20,7 +20,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " set background=dark
-" colorscheme solarized8
+colorscheme landscape
 
 " Showcase comments in italics
 highlight Comment cterm=italic gui=italic
@@ -189,3 +189,10 @@ let g:UltiSnipsEditSplit="vertical"
 " Configuration for custom snippets directory, see
 " https://jdhao.github.io/2019/04/17/neovim_snippet_s1/ for details.
 let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
+
+
+""" LIGHTLINE
+let g:lightline = {
+      \ 'colorscheme': 'landscape',
+      \ }
+set noshowmode  " remove --insert-- and --visual-- because lightline has them
