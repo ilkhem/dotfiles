@@ -152,16 +152,16 @@ else
 endif
 
 " TOC settings
-let g:vimtex_toc_config = {
-      \ 'name' : 'TOC',
-      \ 'layers' : ['content', 'todo', 'include'],
-      \ 'resize' : 1,
-      \ 'split_width' : 50,
-      \ 'todo_sorted' : 0,
-      \ 'show_help' : 1,
-      \ 'show_numbers' : 1,
-      \ 'mode' : 2,
-      \}
+" let g:vimtex_toc_config = {
+"       \ 'name' : 'TOC',
+"       \ 'layers' : ['content', 'todo', 'include'],
+"       \ 'resize' : 1,
+"       \ 'split_width' : 50,
+"       \ 'todo_sorted' : 0,
+"       \ 'show_help' : 1,
+"       \ 'show_numbers' : 1,
+"       \ 'mode' : 2,
+"       \}
 
 " add ysc and yse from surround.vim
 augroup latexSurround
