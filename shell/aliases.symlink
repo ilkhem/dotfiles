@@ -26,3 +26,10 @@ alias t="todo.sh"
 alias u238c="ssh ilyesk@ssh.swc.ucl.ac.uk -t ssh u238c"
 alias gpu350="ssh ilyesk@ssh.swc.ucl.ac.uk -t ssh gpu-350-05"
 
+# Save you from mistyping
+alias sl=ls
+
+# Overwrite existing commands for better defaults
+alias mv="mv -i"           # -i prompts before overwrite
+alias mkdir="mkdir -p"     # -p make parent dirs as needed
+alias df="df -h"           # -h prints human readable format
