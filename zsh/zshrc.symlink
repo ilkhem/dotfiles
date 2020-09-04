@@ -125,3 +125,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 eval "$(pyenv virtualenv-init -)"
+
+
+# run ssh-agent to hold private keys
+eval `ssh-agent -s` > /dev/null
