@@ -19,7 +19,7 @@ alias ll='ls -lh'
 alias l='ls -lah'
 
 alias gpg="gpg2"
-alias st="$HOME/Apps/sublime_text_3/sublime_text"
+# alias st="$HOME/Apps/sublime_text_3/sublime_text"
 
 alias t="todo.sh"
 
@@ -28,6 +28,9 @@ alias gpu350="ssh ilyesk@ssh.swc.ucl.ac.uk -t ssh gpu-350-05"
 
 # Save you from mistyping
 alias sl=ls
+
+# fix tlmgr in arch
+alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 
 # Overwrite existing commands for better defaults
 alias mv="mv -i"           # -i prompts before overwrite

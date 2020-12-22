@@ -70,7 +70,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 autocmd BufWritePre * %s/\s\+$//e
 
 " configure neovim to use pyenv
-let g:python3_host_prog = expand('$HOME/.pyenv/versions/3.7.0/envs/neovim3/bin/python')
+let g:python3_host_prog = expand('$HOME/.pyenv/versions/3.8.0/envs/neovim3/bin/python')
 let g:python_host_prog = expand('$HOME/.pyenv/versions/2.7.14/envs/neovim2/bin/python')
 
 
